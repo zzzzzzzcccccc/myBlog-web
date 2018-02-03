@@ -1,0 +1,246 @@
+html, body, #app{
+  height: 100%;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  /*火狐*/
+  /*关闭横屏自动调整文字大小的功能*/
+}
+body,
+div,
+span,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+input,
+textarea,
+p,
+th,
+td,
+hr,
+button,
+i,
+article,
+aside,
+footer,
+header,
+menu,
+nav,
+section,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: "PingFangSC-Regular", "Helvetica Neue", Helvetica, Arial, "微软雅黑", sans-serif;
+  color: #4C494A;
+}
+body,
+button,
+input,
+select,
+textarea {
+  outline: none;
+  /*元素聚焦时，焦点框为0.*/
+}
+input,
+textarea {
+  border: none;
+  resize: none;
+  /*禁止文本框拉伸*/
+  -webkit-appearance: none;
+  /*组件默认的样式空*/
+  /*特殊的属性定义  清除浏览器给input自带的样式*/
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th {
+  text-align: inherit;
+  /*继承*/
+}
+img {
+  border: 0;
+}
+caption,
+em,
+th {
+  font-style: normal;
+  font-weight: 500;
+}
+caption,
+th {
+  text-align: left;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  outline: none;
+  color: #4C494A;
+}
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+i {
+  font-style: normal;
+}
+.clearfix::after,
+.clearfix::before {
+  content: ".";
+  line-height: 0;
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.none {
+  display: none !important;
+}
+.block {
+  display: block !important;
+}
+.p_top{
+  top: 0;
+}
+.p_left{
+  left: 0;
+}
+.p_right{
+  right: 0;
+}
+.p_bottom{
+  bottom: 0;
+}
+
+.wrapper{
+  width: 100%;
+  height: 100%;
+}
+
+.height1{height:1%}
+.height2{height:2%}
+.height3{height:3%}
+.height4{height:4%}
+.height5{height:5%}
+.height6{height:6%}
+.height7{height:7%}
+.height8{height:8%}
+.height9{height:9%}
+.height10{height:10%}
+.height11{height:11%}
+.height12{height:12%}
+.height13{height:13%}
+.height14{height:14%}
+.height15{height:15%}
+.height16{height:16%}
+.height17{height:17%}
+.height18{height:18%}
+.height19{height:19%}
+.height20{height:20%}
+.height21{height:21%}
+.height22{height:22%}
+.height23{height:23%}
+.height24{height:24%}
+.height25{height:25%}
+.height26{height:26%}
+.height27{height:27%}
+.height28{height:28%}
+.height29{height:29%}
+.height30{height:30%}
+.height31{height:31%}
+.height32{height:32%}
+.height33{height:33%}
+.height34{height:34%}
+.height35{height:35%}
+.height36{height:36%}
+.height37{height:37%}
+.height38{height:38%}
+.height39{height:39%}
+.height40{height:40%}
+.height41{height:41%}
+.height42{height:42%}
+.height43{height:43%}
+.height44{height:44%}
+.height45{height:45%}
+.height46{height:46%}
+.height47{height:47%}
+.height48{height:48%}
+.height49{height:49%}
+.height50{height:50%}
+.height51{height:51%}
+.height52{height:52%}
+.height53{height:53%}
+.height54{height:54%}
+.height55{height:55%}
+.height56{height:56%}
+.height57{height:57%}
+.height58{height:58%}
+.height59{height:59%}
+.height60{height:60%}
+.height61{height:61%}
+.height62{height:62%}
+.height63{height:63%}
+.height64{height:64%}
+.height65{height:65%}
+.height66{height:66%}
+.height67{height:67%}
+.height68{height:68%}
+.height69{height:69%}
+.height70{height:70%}
+.height71{height:71%}
+.height72{height:72%}
+.height73{height:73%}
+.height74{height:74%}
+.height75{height:75%}
+.height76{height:76%}
+.height77{height:77%}
+.height78{height:78%}
+.height79{height:79%}
+.height80{height:80%}
+.height81{height:81%}
+.height82{height:82%}
+.height83{height:83%}
+.height84{height:84%}
+.height85{height:85%}
+.height86{height:86%}
+.height87{height:87%}
+.height88{height:88%}
+.height89{height:89%}
+.height90{height:90%}
+.height91{height:91%}
+.height92{height:92%}
+.height93{height:93%}
+.height94{height:94%}
+.height95{height:95%}
+.height96{height:96%}
+.height97{height:97%}
+.height98{height:98%}
+.height99{height:99%}
+.height100{height:100%}
+
