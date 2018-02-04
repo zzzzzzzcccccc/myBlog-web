@@ -1,31 +1,68 @@
 <template>
   <div id="app">
-    <div class="wrapper">
-      <wrapper-header></wrapper-header>
-    </div>
+    <section class="wrapper" id="globalWrapper">
+      <!--全屏轮播-->
+      <wrapper-banner :list="config.bannerList" v-if="config.bannerList"></wrapper-banner>
 
-    {{ navList }}
-
+      <div class="wrapper-info">
+        <!--搜索-->
+        <wrapper-search></wrapper-search>
+        <section class="wrapper-info-container">
+          <!--导航栏-->
+          <wrapper-nav :list="config.navList" v-if="config.navList"></wrapper-nav>
+          <!--底部-->
+          <wrapper-footer></wrapper-footer>
+        </section>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
-  import { WrapperHeader } from './views'
   import { mapState } from 'vuex'
+  import {
+    WrapperBanner,
+    WrapperNav,
+    WrapperFooter,
+    WrapperSearch
+  } from './views'
 
   export default {
     components: {
-      WrapperHeader
+      WrapperBanner,
+      WrapperNav,
+      WrapperFooter,
+      WrapperSearch
     },
     computed: {
-      ...mapState(['navList', 'commentList'])
+      ...mapState(['config'])
     },
     created () {
-      console.log(this.navList)
     }
   }
 </script>
 
 <style lang="css">
   @import "./assets/css/reset.css";
+
+  .wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .wrapper-info{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+  }
+
+  .wrapper-info-container{
+    width: 100%;
+    height: 100%;
+  }
 </style>

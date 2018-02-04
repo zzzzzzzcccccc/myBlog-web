@@ -1,5 +1,11 @@
-import WrapperHeader from './WrapperHeader'
+import WrapperBanner from './WrapperBanner'
+import WrapperNav from './WrapperNav'
+import WrapperFooter from './WrapperFooter'
+import WrapperSearch from './WrapperSearch'
 
 export {
-  WrapperHeader
+  WrapperBanner,
+  WrapperNav,
+  WrapperFooter,
+  WrapperSearch
 }

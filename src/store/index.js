@@ -4,8 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  navList: [],
-  commitList: []
+  config: {}
 }
 
 const mutations = {
