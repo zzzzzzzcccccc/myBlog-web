@@ -11,7 +11,7 @@
           <!--导航栏-->
           <wrapper-nav :list="config.navList" v-if="config.navList"></wrapper-nav>
           <!--底部-->
-          <wrapper-footer></wrapper-footer>
+          <wrapper-footer :count="config.allVisitCount"></wrapper-footer>
         </section>
       </div>
     </section>

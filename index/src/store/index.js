@@ -8,9 +8,15 @@ const state = {
 }
 
 const mutations = {
+  CONFIG (state, { item, data }) {
+    state.config[item] = data
+  }
 }
 
 const actions = {
+  setConfig ({ commit }, payload) {
+    commit('CONFIG', payload)
+  }
 }
 
 export default new Vuex.Store({

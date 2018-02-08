@@ -1,9 +1,9 @@
 <template>
-  <section id="wrapperSearch" class="wrapper-search" @mouseleave="searchActive = false">
+  <section id="wrapperSearch" class="wrapper-search">
     <div class="search-container">
-      <div class="search-container-info" :class="searchActive ? 'search-active' : ''" @click="searchActive = true">
+      <div class="search-container-info" :class="searchActive ? 'search-active' : ''">
         <search-icon class="icon"></search-icon>
-        <input type="text" v-model="searchData" @focus="searchActive = true" class="search-input" />
+        <input type="text" v-model="searchData" @focus="searchActive = true" @blur="searchActive = false" class="search-input" />
       </div>
     </div>
   </section>
@@ -56,7 +56,6 @@
   }
 
   .icon{
-    height: 100%;
     font-size: 18px;
   }
 
