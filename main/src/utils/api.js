@@ -1,9 +1,10 @@
-/*
-* 接口地址
-* */
-
-const baseUrl = 'http://116.62.152.114:8085'
+const baseUrl = `http://127.0.0.1:8080`
 
 export default {
-  test: baseUrl + '/ApkVersion/payWhiteList/findPayWhiteList'
+  index: {
+    navList: baseUrl + '/index/navList'
+  },
+  share: {
+    list: baseUrl + '/outside/article/list'
+  }
 }

@@ -1,5 +1,4 @@
-html, body, #app{
-  height: 100%;
+html, body{
 }
 html {
   -webkit-text-size-adjust: 100%;
@@ -136,11 +135,6 @@ i {
 }
 .p_bottom{
   bottom: 0;
-}
-
-.wrapper{
-  width: 100%;
-  height: 100%;
 }
 
 .height1{height:1%}
