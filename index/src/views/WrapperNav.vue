@@ -3,7 +3,7 @@
     <div class="nav-container">
       <ul class="nav-wrapper">
         <li class="nav-list" v-for="(item, index) in list" :key="index" v-if="item.visible" :title="item.remark">
-          <a :href="item.href">
+          <a :href="item.href" v-if="index === 0 ? false : true">
             <div class="nav-list-info">
               <div class="nav-list-info-name">
                 <span class="icon"><component :is="item.iconClassName" /></span><span class="title">{{ item.name }}</span>

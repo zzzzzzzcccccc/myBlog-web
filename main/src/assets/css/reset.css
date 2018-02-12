@@ -237,4 +237,9 @@ i {
 .height98{height:98%}
 .height99{height:99%}
 .height100{height:100%}
+.font-over{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 

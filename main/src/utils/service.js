@@ -10,9 +10,13 @@ const indexService = {
 }
 
 const shareService = {
-  async list ({ searchData, cb }) {
+  async list ({ searchData={}, cb }) {
     const { code, data } = await request.apiGet(api.share.list, searchData)
     if (code === enums.SUCCESS_CODE) cb(data)
+  },
+  async updateVisitCount ({ id, cb }) {
+    const { code } = await request.apiGet(api.share.updateVisitCount, { id })
+    if (code === enums.SUCCESS_CODE) cb()
   }
 }
 

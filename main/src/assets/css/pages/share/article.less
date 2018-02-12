@@ -1,0 +1,73 @@
+/* 移动 */
+@media screen and (min-width: 320px) and (max-width: 720px) {
+  .article-list{
+    width: 100%;
+    overflow: hidden;
+  }
+  .article-list-img{
+    display: none;
+  }
+}
+/* pc */
+@media screen and (min-width: 721px) {
+  .article-list{
+    min-width: 720px;
+    max-width: 1000px;
+    margin: 60px  auto 0 auto;
+    background: #ffffff;
+  }
+}
+
+.article-list-info{
+  border-bottom: 1px solid #999;
+  height: 70px;
+  overflow: hidden;
+}
+.article-list-wrapper{
+  padding: 10px;
+}
+
+.article-list-label, .article-list-attr{
+  width: 100%;
+}
+
+.article-list-title{
+  width: 100%;
+  font-size: 18px;
+}
+
+.article-list-attr{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: relative;
+  padding-right: 52px;
+  margin-top: 4px;
+}
+
+.article-list-label-item{
+  font-size: 14px;
+  color: #666;
+  margin-right: 3px;
+}
+.article-list-type{
+  text-align: center;
+  color: #ffffff;
+  width: 52px;
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.article-list-spinner{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+.article-list-spinner span{
+  color: #a1a1a1;
+}
+

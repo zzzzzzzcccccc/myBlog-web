@@ -1,0 +1,59 @@
+.pc-wrapper{
+  width: 100%;
+  box-shadow: 0 20px 100px rgba(0, 0, 0, .2);
+}
+
+.pc-nav-container{
+  min-width: 720px;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.pc-home{
+  width: 20%;
+}
+
+.pc-item{
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 字体样式 */
+.pc-nav-list-info .pc-nav-name{
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #656565;
+  position: relative;
+}
+
+/* 移入动画 */
+.pc-nav-list-info .pc-nav-name::after{
+  content:'';
+  display:block;
+  width:0;
+  height:2px;
+  position:absolute;
+  left:0;
+  bottom: -4px;
+  background: #333;
+  transition:width 0.3s ease-in-out;
+}
+
+.pc-nav-list:hover .pc-nav-list-info .pc-nav-name, .pc-home:hover .pc-nav-name, .pc-active .pc-nav-list-info .pc-nav-name{
+  color: #333333;
+}
+
+.pc-nav-list:hover .pc-nav-list-info .pc-nav-name::after, .pc-home:hover .pc-nav-name::after, .pc-active .pc-nav-list-info .pc-nav-name::after{
+  width: 100%;
+}

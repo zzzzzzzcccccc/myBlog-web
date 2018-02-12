@@ -1,0 +1,50 @@
+.mobile-wrapper{
+  width: 100%;
+  box-shadow: 0 20px 100px rgba(0, 0, 0, .2);
+}
+
+.mobile-nav-container{
+  width: 100%;
+  height: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+/*toggle*/
+.mobile-nav-toggle{
+  border: 0;
+  background: transparent;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 22px;
+}
+.mobile-nav-toggle .icon-bar{
+  background: #333;
+  border-color: transparent;
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.mobile-item-nav-list{
+  padding: 0 10px;
+}
+
+.mobile-nav-info{
+  height: 36px;
+  line-height: 36px;
+}
+
+.mobile-nav-name{
+  color: #656565;
+}
+.mobile-active .mobile-nav-name{
+  color: #333333;
+  font-weight: 700;
+}
