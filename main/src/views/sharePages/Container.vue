@@ -14,7 +14,7 @@
             <li v-for="(item, index) in list" :key="index" class="article-list-info" @click="bindLink(item)">
               <div class="article-list-wrapper">
                 <div class="article-list-label">
-                  <h3 class="article-list-title font-over">{{ item.articleTitle }}</h3>
+                  <div class="article-list-title"><span>{{ item.articleTitle }}</span></div>
                   <div class="article-list-attr">
                     <span class="article-list-type" :style="{ backgroundColor: `${item.articleTypeLabelColor}` }">{{ item.articleTypeName }}</span>
                     <span class="article-list-label-item article-list-author font-over">{{ item.articleAuthor ? item.articleAuthor : '未知作者' }}</span>

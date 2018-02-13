@@ -16,6 +16,13 @@
   .article-list-type{
     font-size: 12px;
   }
+  .article-list-title span {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+  }
 }
 /* pc */
 @media screen and (min-width: 721px) {
@@ -37,12 +44,15 @@
 }
 
 .article-list-info{
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid rgba(178, 186, 194, 0.15);
   overflow: hidden;
   cursor: pointer;
 }
 .article-list-info:hover{
   background: rgba(0, 0, 0, 0.1);
+}
+.article-list-info:hover .article-list-title span::after{
+  width: 100%;
 }
 .article-list-wrapper{
   padding: 10px;
@@ -54,9 +64,24 @@
 }
 
 .article-list-title{
-  width: 100%;
   margin-bottom: 4px;
 }
+.article-list-title span{
+  position: relative;
+  font-weight: 700;
+}
+.article-list-title span::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  background: #333;
+  transition: width 0.3s ease-in-out;
+}
+
 
 .article-list-attr{
   display: flex;

@@ -7,13 +7,14 @@
       <section class="wrapper-body">
         <div class="wrapper-body-top">
           <img src="../../assets/img/ico.jpeg" class="name-img" />
-          <div class="name">一位致力于成为全栈的前端开发工程师</div>
+          <div class="name font-over">致力于成为全栈的前端开发工程师</div>
         </div>
         <div class="wrapper-body-center">
           <h3>个人信息</h3>
           <div class="wrapper-body-center-item font-over">姓名:邹晨</div>
           <div class="wrapper-body-center-item font-over">爱好:动漫、游戏、电子产品</div>
-          <div class="wrapper-body-center-item font-over">厌恶:做重复的事情</div>
+          <div class="wrapper-body-center-item font-over">企鹅:304307393</div>
+          <div class="wrapper-body-center-item font-over">email:z304307393@163.com</div>
         </div>
       </section>
     </div>
