@@ -5,7 +5,9 @@
         <visit-count-icon></visit-count-icon>
         {{ count }}
       </div>
-      <div class="footer-content"></div>
+      <div class="footer-content font-over">
+        © 2016-2018 zouchenwd.cn 版权所有鄂ICP备17021615号-1
+      </div>
       <div class="footer-share-list">
         <a v-for="(item, index) in shareList" :key="index" :href="item.href" target="_blank" :title="item.title">
           <component class="footer-share-list-item" :is="item.component" />
@@ -58,6 +60,10 @@
 
   .footer-share-list-item{
     font-size: 16px;
+    color: #ffffff;
+  }
+  .footer-content{
+    font-size: 12px;
     color: #ffffff;
   }
 

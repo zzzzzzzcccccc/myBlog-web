@@ -1,6 +1,5 @@
 .mobile-wrapper{
   width: 100%;
-  box-shadow: 0 20px 100px rgba(0, 0, 0, .2);
 }
 
 .mobile-nav-container{
@@ -13,23 +12,32 @@
   padding: 0 10px;
 }
 /*toggle*/
-.mobile-nav-toggle{
-  border: 0;
+.mobile-item{
   background: transparent;
-  outline: none;
+  height: 36px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  height: 22px;
+  padding: 10px 0;
 }
-.mobile-nav-toggle .icon-bar{
+.mobile-item .icon-bar{
   background: #333;
   border-color: transparent;
   display: block;
   width: 22px;
   height: 2px;
   border-radius: 1px;
+  transition: all 0.3s;
+}
+.toggle-active .toggle-icon-1{
+  transform:translateY(7px) rotate(45deg);
+}
+.toggle-active .toggle-icon-2{
+  opacity: 0;
+}
+.toggle-active .toggle-icon-3{
+  transform:translateY(-7px) rotate(-45deg);
 }
 
 .mobile-item-nav-list{

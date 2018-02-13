@@ -1,17 +1,13 @@
 <template>
   <section id="mainHeader" class="header-wrapper">
     <!--移动端导航-->
-    <div class="mobile-wrapper">
+    <div class="mobile-wrapper" :class="isShadow ? 'nav-wrapper-box-shadow' : ''">
       <div class="mobile-nav-container">
         <div class="mobile-home">
           <div class="mobile-nav-info"><a :href="homeItem.href"><span class="mobile-nav-name">{{ homeItem.enName }}</span></a></div>
         </div>
-        <div class="mobile-item">
-          <button
-            class="mobile-nav-toggle"
-            @click="navListVisible ? navListVisible = false : navListVisible = true">
-            <span v-for="item in 3" class="icon icon-bar"></span>
-          </button>
+        <div class="mobile-item" :class="navListVisible ? 'toggle-active' : ''" @click="navListVisible ? navListVisible = false : navListVisible = true">
+          <span v-for="item in 3" class="icon icon-bar" :class="`toggle-icon-${item}`"></span>
         </div>
       </div>
       <collapse-transition>
@@ -26,7 +22,7 @@
       </collapse-transition>
     </div>
     <!--pc端导航-->
-    <div class="pc-wrapper">
+    <div class="pc-wrapper" :class="isShadow ? 'nav-wrapper-box-shadow' : ''">
       <div class="pc-nav-container">
         <div class="pc-home">
           <a :href="homeItem.href"><div class="pc-nav-list-info"><span class="pc-nav-name">{{ homeItem.enName }}</span></div></a>
@@ -56,6 +52,10 @@
       CollapseTransition
     },
     props: {
+      isShadow: {
+        type: Boolean,
+        default: true
+      },
       activeId: {
         type: [Number, String]
       }
@@ -103,5 +103,9 @@
     .mobile-wrapper{
       display: none;
     }
+  }
+
+  .nav-wrapper-box-shadow{
+    box-shadow: 0 20px 100px rgba(0, 0, 0, .2);
   }
 </style>

@@ -1,0 +1,60 @@
+/*移动*/
+@media screen and (min-width: 320px) and (max-width: 720px) {
+  .wrapper-body{
+  }
+}
+/*pc*/
+@media screen and (min-width: 721px) {
+  .wrapper-body{
+  }
+}
+
+.canvas{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #dcdcdc 0%, #2fa6db 100%);
+  z-index: 5;
+}
+
+.wrapper-container{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.wrapper-body{
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  padding: 10px;
+  position: fixed;
+  z-index: 20;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+.wrapper-body-top{
+  width: 100%;
+  text-align: center;
+}
+.name-img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.wrapper-body-center{
+  padding-left: 12px;
+}
+.wrapper-body-center-item{
+  font-size: 16px;
+  padding: 2px 0;
+  color: #656565;
+}

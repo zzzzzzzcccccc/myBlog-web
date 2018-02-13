@@ -7,6 +7,15 @@
   .article-list-img{
     display: none;
   }
+  .article-list-title{
+    font-size: 16px;
+  }
+  .article-list-label-item{
+    font-size: 14px;
+  }
+  .article-list-type{
+    font-size: 12px;
+  }
 }
 /* pc */
 @media screen and (min-width: 721px) {
@@ -16,15 +25,28 @@
     margin: 60px  auto 0 auto;
     background: #ffffff;
   }
+  .article-list-title{
+    font-size: 18px;
+  }
+  .article-list-label-item{
+    font-size: 16px;
+  }
+  .article-list-type{
+    font-size: 14px;
+  }
 }
 
 .article-list-info{
   border-bottom: 1px solid #999;
-  height: 70px;
   overflow: hidden;
+  cursor: pointer;
+}
+.article-list-info:hover{
+  background: rgba(0, 0, 0, 0.1);
 }
 .article-list-wrapper{
   padding: 10px;
+  position: relative;
 }
 
 .article-list-label, .article-list-attr{
@@ -33,20 +55,18 @@
 
 .article-list-title{
   width: 100%;
-  font-size: 18px;
+  margin-bottom: 4px;
 }
 
 .article-list-attr{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  position: relative;
+  align-items: center;
   padding-right: 52px;
-  margin-top: 4px;
 }
 
 .article-list-label-item{
-  font-size: 14px;
   color: #666;
   margin-right: 3px;
 }
@@ -55,9 +75,11 @@
   color: #ffffff;
   width: 52px;
   display: block;
+  height: 22px;
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 10px;
+  line-height: 22px;
+  bottom: 10px;
 }
 
 .article-list-spinner{
