@@ -2,27 +2,46 @@
   <section class="wrapper">
     <div class="wrapper-container">
       <!--头部-->
-      <top-nav :activeId="5"></top-nav>
+      <top-nav :activeId="5" :isShadow="false"></top-nav>
       <!--身体-->
       <section class="wrapper-body">
+        <ul class="progress-list" :style="{ height: `${listHeight * list.length}px` }">
+          <li class="progress-list-item" v-for="(item, index) in list" :key="index" :style="{ height: `${listHeight}px` }">
+            <div class="list-wrapper">
+              <h3 class="progress-title font-over">{{ item.title }}<span class="progress-time">({{ item.createTime }})</span></h3>
+              <div class="list-icon">
+                <span class="progress-git" v-if="item.githubHref"><a :href="item.githubHref" target="_blank"><git-icon class="icon-item"></git-icon></a></span>
+                <span class="progress-project" v-if="item.projectHref"><a :href="item.projectHref" target="_blank"><project-icon class="icon-item"></project-icon></a></span>
+              </div>
+            </div>
+          </li>
+        </ul>
       </section>
     </div>
 
-    <div class="wrapper-bg"></div>
+    <div class="wrapper-bg" :style="{ background: `url(${progressBg}) no-repeat top center`, backgroundSize: `100% 100%` }">
+      <point-canvas lineColor="#fff" pointColor="#fff"></point-canvas>
+    </div>
   </section>
 </template>
 
 <script>
   import { TopNav } from '../Common'
+  import { PointCanvas, GitIcon, ProjectIcon } from '../../components'
   import { progressService } from '../../utils/service';
 
   export default {
     components: {
-      TopNav
+      TopNav,
+      PointCanvas,
+      GitIcon,
+      ProjectIcon
     },
     data () {
       return {
-        list: []
+        list: [],
+        listHeight: 46,
+        progressBg: 'http://f2.dn.anqu.com/down/YzA2YQ==/allimg/1211/17-121105162Z3.jpg'
       }
     },
     mounted () {
