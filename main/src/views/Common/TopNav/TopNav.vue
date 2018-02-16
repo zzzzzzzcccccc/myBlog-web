@@ -4,7 +4,7 @@
     <div class="mobile-wrapper" :class="isShadow ? 'nav-wrapper-box-shadow' : ''">
       <div class="mobile-nav-container">
         <div class="mobile-home">
-          <div class="mobile-nav-info"><a :href="homeItem.href"><span class="mobile-nav-name">{{ homeItem.enName }}</span></a></div>
+          <div class="mobile-nav-info"><a :href="homeItem.href"><span class="mobile-nav-name">{{ homeItem.name }}</span></a></div>
         </div>
         <div class="mobile-item" :class="navListVisible ? 'toggle-active' : ''" @click="navListVisible ? navListVisible = false : navListVisible = true">
           <span v-for="item in 3" class="icon icon-bar" :class="`toggle-icon-${item}`"></span>
@@ -16,7 +16,7 @@
                :class="item.id === activeId ? 'mobile-active' : ''"
                v-for="(item, index) in navList" :key="index"
                v-if="item.id === 1 ? false : true">
-            <a :href="item.href"><span class="mobile-nav-name">{{ item.enName }}</span></a>
+            <a :href="item.href"><span class="mobile-nav-name">{{ item.name }}</span></a>
           </div>
         </div>
       </collapse-transition>
@@ -25,7 +25,7 @@
     <div class="pc-wrapper" :class="isShadow ? 'nav-wrapper-box-shadow' : ''">
       <div class="pc-nav-container">
         <div class="pc-home">
-          <a :href="homeItem.href"><div class="pc-nav-list-info"><span class="pc-nav-name">{{ homeItem.enName }}</span></div></a>
+          <a :href="homeItem.href"><div class="pc-nav-list-info"><span class="pc-nav-name">{{ homeItem.name }}</span></div></a>
         </div>
         <div class="pc-item">
           <div class="pc-nav-list"
@@ -33,7 +33,7 @@
                v-for="(item, index) in navList" v-if="item.id === 1 ? false : true">
             <a :href="item.href">
               <div class="pc-nav-list-info">
-                <span class="pc-nav-name">{{ item.enName }}</span>
+                <span class="pc-nav-name">{{ item.name }}</span>
               </div>
             </a>
           </div>

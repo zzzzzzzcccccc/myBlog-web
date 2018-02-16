@@ -4,6 +4,8 @@ import SpinnerItem from './SpinnerItem/SpinnerItem'
 import PointCanvas from './PonitCanvas/PointCanvas'
 import GitIcon from './GitIcon/GitIcon'
 import ProjectIcon from './ProjectIcon/ProjectIcon'
+import ArrowLeftIcon from './ArrowLeftIcon/ArrowLeftIcon'
+import ClickCountIcon from './ClickCountIcon/ClickCountIcon'
 
 export {
   InfiniteScroll,
@@ -11,5 +13,7 @@ export {
   SpinnerItem,
   PointCanvas,
   GitIcon,
-  ProjectIcon
+  ProjectIcon,
+  ArrowLeftIcon,
+  ClickCountIcon
 }

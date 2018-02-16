@@ -25,6 +25,32 @@ const shareService = {
   }
 }
 /*
+* 文章数据
+* */
+const articleService = {
+  async list ({ searchData={}, cb }) {
+    const { code, data } = await request.apiGet(api.article.list, searchData)
+    if (code === enums.SUCCESS_CODE) cb(data)
+  },
+  async updateVisitCount ({ id, cb }) {
+    const { code } = await request.apiGet(api.article.updateVisitCount, { id })
+    if (code === enums.SUCCESS_CODE) cb()
+  },
+  async findById ({ searchData={}, cb }) {
+    const { code, data } = await request.apiPost(api.article.findById, searchData)
+    if (code === enums.SUCCESS_CODE) cb(data)
+  }
+}
+/*
+* 评论数据
+* */
+const commentService = {
+  async list ({ searchData={}, cb }) {
+    const { code, data } = await request.apiGet(api.comment.list, searchData)
+    if (code === enums.SUCCESS_CODE) cb(data)
+  }
+}
+/*
 * 历程数据
 * */
 const progressService = {
@@ -37,5 +63,7 @@ const progressService = {
 export {
   indexService,
   shareService,
+  articleService,
+  commentService,
   progressService
 }

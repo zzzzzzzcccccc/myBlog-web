@@ -17,9 +17,9 @@
                   <div class="article-list-title"><span>{{ item.articleTitle }}</span></div>
                   <div class="article-list-attr">
                     <span class="article-list-type" :style="{ backgroundColor: `${item.articleTypeLabelColor}` }">{{ item.articleTypeName }}</span>
-                    <span class="article-list-label-item article-list-author font-over">{{ item.articleAuthor ? item.articleAuthor : '未知作者' }}</span>
-                    <span class="article-list-label-item font-over">{{ item.createTime }}</span>
-                    <span class="article-list-label-item font-over">{{ item.visitCount }}人阅读</span>
+                    <span :title="item.articleAuthor ? item.articleAuthor : '未知作者'" class="article-list-label-item article-list-author font-over">{{ item.articleAuthor ? item.articleAuthor : '未知作者' }}</span>
+                    <span :title="item.createTime" class="article-list-label-item font-over">{{ item.createTime }}</span>
+                    <span :title="item.visitCount" class="article-list-label-item font-over">{{ item.visitCount }}人阅读</span>
                   </div>
                 </div>
               </div>
@@ -55,8 +55,7 @@
           totalPage: null,
           total: null,
           limitPageNum: null
-        },
-        loading: false // 是否开启无限加载
+        }
       }
     },
     methods: {
@@ -106,7 +105,7 @@
 </script>
 
 <style lang="css">
-  @import "../../assets/css/pages/share/article.less";
+  @import "../../assets/css/pages/share/index.less";
 
   .wrapper, .wrapper-container, .wrapper-body{
     width: 100%;

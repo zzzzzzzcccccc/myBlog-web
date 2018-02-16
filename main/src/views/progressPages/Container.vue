@@ -41,7 +41,7 @@
       return {
         list: [],
         listHeight: 46,
-        progressBg: 'http://f2.dn.anqu.com/down/YzA2YQ==/allimg/1211/17-121105162Z3.jpg'
+        progressBg: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1518766094189&di=edecf5932ab4f3f936b9bba36d22a68d&imgtype=0&src=http%3A%2F%2Fimgstore.cdn.sogou.com%2Fapp%2Fa%2F100540002%2F718502.jpg'
       }
     },
     mounted () {
@@ -49,9 +49,7 @@
     },
     methods: {
       onReady () {
-        progressService.list({
-          cb: data => this.list = data
-        })
+        progressService.list({ cb: data => this.list = data })
       }
     }
   }
