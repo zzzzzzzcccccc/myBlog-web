@@ -1,6 +1,7 @@
 import api from './api'
 import request from './request'
 import enums from './enums'
+import helper from './helper'
 
 /*
 * 首页数据
@@ -59,11 +60,20 @@ const progressService = {
     if (code === enums.SUCCESS_CODE) cb(data)
   }
 }
+/*
+* 用户数据
+* */
+const sysUserService = {
+  accountLogin (params={}) {
+    return request.apiPost(api.sysUser.accountLogin, params)
+  }
+}
 
 export {
   indexService,
   shareService,
   articleService,
   commentService,
-  progressService
+  progressService,
+  sysUserService
 }

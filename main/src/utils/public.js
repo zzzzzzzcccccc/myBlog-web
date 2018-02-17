@@ -21,4 +21,36 @@ export function getParams () {
   return paramsObj
 }
 
+/*
+* 缓存登录信息
+* @params sysRole
+* @params sysModules
+* */
+export function sessionLoginInfo (sysRole, sysModules, username) {
+  sessionStorage.setItem('sysRole', JSON.stringify(sysRole))
+  sessionStorage.setItem('sysModules', JSON.stringify(sysModules))
+  sessionStorage.setItem('username', username)
+}
+
+/*
+* 格式化登录的菜单列表
+* @params modules
+* */
+export function formatSysModule (modules) {
+  const returnModules = modules.filter(item => item.parentId === 0)
+
+  for (let i = 0; i < returnModules.length; i++) {
+    const returnModule = returnModules[i]
+    returnModule.modules = []
+
+    for (let j = 0; j < modules.length; j++) {
+      const { parentId } = modules[j]
+
+      if (parentId === returnModule.id) returnModule.modules.push(modules[j])
+    }
+  }
+
+  return returnModules
+}
+
 

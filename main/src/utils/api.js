@@ -19,5 +19,8 @@ export default {
   },
   progress: {
     list: baseUrl + '/progress/list'
+  },
+  sysUser: {
+    accountLogin: baseUrl + '/sysUser/accountLogin'
   }
 }

@@ -5,12 +5,14 @@ import { createRouter } from '../../router/MyBlogManagerRouter'
 import {
   Icon,
   Button,
+  Input,
   Form,
   FormItem
 } from 'element-ui'
 Vue.prototype.$ELEMENT = { size: 'small' }
 Vue.use(Icon)
 Vue.use(Button)
+Vue.use(Input)
 Vue.use(Form)
 Vue.use(FormItem)
 
