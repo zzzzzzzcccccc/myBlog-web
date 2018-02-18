@@ -4,8 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 import {
-  Login,
-  Container
+  Login
 } from '../views/myBlogManagerPages'
 
 export function createRouter () {

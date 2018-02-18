@@ -7,7 +7,23 @@ import {
   Button,
   Input,
   Form,
-  FormItem
+  FormItem,
+  Menu,
+  MenuItem,
+  Submenu,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
+  Table,
+  TableColumn,
+  Pagination,
+  Tooltip,
+  Breadcrumb,
+  BreadcrumbItem,
+  Dialog,
+  Radio,
+  Select,
+  Option
 } from 'element-ui'
 Vue.prototype.$ELEMENT = { size: 'small' }
 Vue.use(Icon)
@@ -15,6 +31,22 @@ Vue.use(Button)
 Vue.use(Input)
 Vue.use(Form)
 Vue.use(FormItem)
+Vue.use(Menu)
+Vue.use(MenuItem)
+Vue.use(Submenu)
+Vue.use(Dropdown)
+Vue.use(DropdownMenu)
+Vue.use(DropdownItem)
+Vue.use(Table)
+Vue.use(TableColumn)
+Vue.use(Pagination)
+Vue.use(Tooltip)
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
+Vue.use(Dialog)
+Vue.use(Radio)
+Vue.use(Select)
+Vue.use(Option)
 
 const router = createRouter()
 

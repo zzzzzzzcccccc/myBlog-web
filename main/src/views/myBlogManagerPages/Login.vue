@@ -19,11 +19,14 @@
 
 <script>
   import { sysUserService } from '../../utils/service'
-  import { sessionLoginInfo, formatSysModule } from '../../utils/public'
+  import { sessionLoginInfo, clearSessionLoginInfo, formatSysModule, formatRouter } from '../../utils/public'
   import enums from '../../utils/enums'
   import helper from '../../utils/helper'
 
   export default {
+    computed: {
+      sysModules () { return JSON.parse(sessionStorage.getItem('sysModules')) }
+    },
     data () {
       return {
         wrapperBg: 'http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1301/21/c0/17587163_1358748614515.jpg',
@@ -42,7 +45,13 @@
         loading: false
       }
     },
+    mounted () {
+      this.onReady()
+    },
     methods: {
+      onReady () {
+        this.checkLogin()
+      },
       login (formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) this.doLogin()
@@ -57,7 +66,16 @@
       },
       doLoginSuccess ({ sysRole, sysModules }) {
         sessionLoginInfo(sysRole, sysModules, this.ruleForm.username)
-        console.log(formatSysModule(sysModules))
+        this.$router.addRoutes(formatRouter(sysModules))
+        this.$router.replace('/readme')
+      },
+      checkLogin () {
+        if (this.sysModules) {
+          this.$router.replace('/readme')
+        } else {
+          clearSessionLoginInfo()
+          this.$router.replace('/')
+        }
       }
     }
   }

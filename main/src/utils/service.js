@@ -2,6 +2,7 @@ import api from './api'
 import request from './request'
 import enums from './enums'
 import helper from './helper'
+import { toggleLoading } from './public'
 
 /*
 * 首页数据
@@ -66,6 +67,43 @@ const progressService = {
 const sysUserService = {
   accountLogin (params={}) {
     return request.apiPost(api.sysUser.accountLogin, params)
+  },
+  async list ({ searchData={}, cb }) {
+    toggleLoading(true)
+    const { code, msg, data } = await request.apiGet(api.sysUser.list, searchData)
+    toggleLoading(false)
+    if (code === enums.SUCCESS_CODE) cb(data)
+    else helper.error(msg)
+  },
+  addOne (params={}) {
+    return request.apiPost(api.sysUser.addOne, params)
+  },
+  updateOne (params={}) {
+    return request.apiPost(api.sysUser.updateOne, params)
+  },
+  deleteOne (id) {
+    return request.apiGet(api.sysUser.deleteOne, { id })
+  }
+}
+/*
+* 角色数据
+* */
+const sysRoleService = {
+  async list ({ searchData={}, cb }) {
+    toggleLoading(true)
+    const { code, msg, data } = await request.apiGet(api.sysRole.list, searchData)
+    toggleLoading(false)
+    if (code === enums.SUCCESS_CODE) cb(data)
+    else helper.error(msg)
+  },
+  addOne (params={}) {
+    return request.apiPost(api.sysRole.addOne, params)
+  },
+  updateOne (params={}) {
+    return request.apiPost(api.sysRole.updateOne, params)
+  },
+  deleteOne (id) {
+    return request.apiGet(api.sysRole.deleteOne, { id })
   }
 }
 
@@ -75,5 +113,6 @@ export {
   articleService,
   commentService,
   progressService,
-  sysUserService
+  sysUserService,
+  sysRoleService
 }

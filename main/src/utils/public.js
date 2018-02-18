@@ -33,6 +33,15 @@ export function sessionLoginInfo (sysRole, sysModules, username) {
 }
 
 /*
+* 移除缓存
+* */
+export function clearSessionLoginInfo () {
+  sessionStorage.removeItem('sysRole')
+  sessionStorage.removeItem('sysModules')
+  sessionStorage.removeItem('username')
+}
+
+/*
 * 格式化登录的菜单列表
 * @params modules
 * */
@@ -51,6 +60,90 @@ export function formatSysModule (modules) {
   }
 
   return returnModules
+}
+
+/*
+* 构造vue-router需要addRouters的数据结构
+* @params modules
+* */
+export function formatRouter (modules) {
+  const home = {
+    path: '/Container',
+    component: resolve => require(['../views/myBlogManagerPages/Container.vue'], resolve),
+    children: [{
+      path: '/readme',
+      component: resolve => require(['../views/myBlogManagerPages/pages/readme.vue'], resolve)
+    }]
+  }
+
+  for (let i = 0; i < modules.length; i++) {
+    if (modules[i].parentId !== 0) {
+      home.children.push({
+        path: `/${modules[i].modulePath}`,
+        component: resolve => require([`../views/myBlogManagerPages/pages/${modules[i].modulePath}.vue`], resolve)
+      })
+    }
+  }
+
+  return [home]
+}
+
+/*
+* 打开/关闭全局loading
+* */
+import { Loading } from 'element-ui'
+let LoadingService
+export function toggleLoading (boolean=false) {
+  if (boolean) {
+    LoadingService = Loading.service({
+      lock: true,
+      text: 'Loading',
+      spinner: 'el-icon-loading',
+      background: 'rgba(0, 0, 0, 0.7)'
+    })
+  } else {
+    LoadingService.close()
+  }
+}
+
+/*
+* 二次确认弹窗封装
+* */
+import { MessageBox } from 'element-ui'
+export function showConfirm ({ params={
+  message:'确认执行吗？',
+  title:'提示',
+  options:{ confirmButtonText: '确定', cancelButtonText: '取消', type: 'warning', center: true }
+}, cb, cancelCb=()=> {} }) {
+  MessageBox.confirm(params.message, params.title, params.options).then(() => {
+    cb()
+  }).catch(() => {
+    cancelCb()
+  })
+}
+
+/*
+* 初始化对象
+* @params obj
+* @params val
+* */
+export function clearObj (obj={}, val) {
+  for (const key in obj) {
+    obj[key] = val
+  }
+}
+
+/*
+* 拷贝对象
+* @params copyObj
+* @params obj
+* */
+export function doCopyObj (copyObj, obj) {
+  for (const key in obj) {
+    copyObj[key] = obj[key]
+  }
+
+  return copyObj
 }
 
 

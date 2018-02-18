@@ -21,6 +21,16 @@ export default {
     list: baseUrl + '/progress/list'
   },
   sysUser: {
-    accountLogin: baseUrl + '/sysUser/accountLogin'
+    accountLogin: baseUrl + '/sysUser/accountLogin',
+    list: baseUrl + '/sysUser/list',
+    addOne: baseUrl + '/sysUser/addOne',
+    updateOne: baseUrl + '/sysUser/updateOne',
+    deleteOne: baseUrl + '/sysUser/deleteOne'
+  },
+  sysRole: {
+    list: baseUrl + '/sysRole/list',
+    addOne: baseUrl + '/sysRole/addOne',
+    updateOne: baseUrl + '/sysRole/updateOne',
+    deleteOne: baseUrl + '/sysRole/deleteOne'
   }
 }
