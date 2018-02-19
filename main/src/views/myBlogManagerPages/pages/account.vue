@@ -111,7 +111,7 @@
       },
       handleCurrentChange (pageNum) {
         this.page.pageNum = pageNum
-        this.doGetData()
+        this.doGetData(this.page)
       },
       doGetData (searchData) {
         sysUserService.list({searchData,

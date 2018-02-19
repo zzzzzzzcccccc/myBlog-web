@@ -7,7 +7,10 @@ export default {
   },
   share: { // 分享
     list: baseUrl + '/outside/article/list',
-    updateVisitCount: baseUrl + '/outside/article/updateVisitCount'
+    updateVisitCount: baseUrl + '/outside/article/updateVisitCount',
+    addOne: baseUrl + '/outside/article/addOne',
+    updateOne: baseUrl + '/outside/article/updateOne',
+    deleteOne: baseUrl + '/outside/article/deleteOne'
   },
   article: { // 文章
     list: baseUrl + '/inside/article/list',

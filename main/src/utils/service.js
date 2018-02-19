@@ -24,6 +24,15 @@ const shareService = {
   async updateVisitCount ({ id, cb }) {
     const { code } = await request.apiGet(api.share.updateVisitCount, { id })
     if (code === enums.SUCCESS_CODE) cb()
+  },
+  addOne (params={}) {
+    return request.apiPost(api.share.addOne, params)
+  },
+  updateOne (params={}) {
+    return request.apiPost(api.share.updateOne, params)
+  },
+  deleteOne (id) {
+    return request.apiGet(api.share.deleteOne, { id })
   }
 }
 /*
