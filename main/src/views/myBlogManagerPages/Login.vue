@@ -29,7 +29,7 @@
     },
     data () {
       return {
-        wrapperBg: 'http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1301/21/c0/17587163_1358748614515.jpg',
+        wrapperBg: 'https://abc.2008php.com/2011_Website_appreciate/11-02-02/20110202163716.jpg',
         ruleForm: {
           username: '',
           password: ''

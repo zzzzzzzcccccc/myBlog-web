@@ -23,7 +23,9 @@ import {
   Dialog,
   Radio,
   Select,
-  Option
+  Option,
+  Tree,
+  Tag
 } from 'element-ui'
 Vue.prototype.$ELEMENT = { size: 'small' }
 Vue.use(Icon)
@@ -47,6 +49,8 @@ Vue.use(Dialog)
 Vue.use(Radio)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Tree)
+Vue.use(Tag)
 
 const router = createRouter()
 

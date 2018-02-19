@@ -27,6 +27,7 @@
         if (item === 'loginOut') {
           clearSessionLoginInfo()
           this.$router.replace('/')
+          window.location.reload(true)
         }
       },
       bindClickArrow () {

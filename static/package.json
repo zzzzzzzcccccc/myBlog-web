@@ -1,0 +1,21 @@
+{
+  "name": "app.js",
+  "version": "1.0.0",
+  "description": "static",
+  "main": "app.js",
+  "scripts": {
+    "startProd": "NODE_ENV=production pm2 start app.js --name myBlog-static-port-3001"
+  },
+  "repository": {
+    "type": "git",
+    "url": "MIT"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "zc",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}

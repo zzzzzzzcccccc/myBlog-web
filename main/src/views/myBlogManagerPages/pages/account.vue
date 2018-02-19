@@ -29,7 +29,7 @@
         </el-table-column>
       </el-table>
       <div class="item-body-page">
-        <el-pagination layout="prev, pager, next" :total="page.total"></el-pagination>
+        <el-pagination layout="prev, pager, next, total" :total="page.total" @current-change="handleCurrentChange"></el-pagination>
       </div>
     </div>
     <!--新增-->
@@ -109,6 +109,10 @@
       onReady() {
         this.doGetData()
       },
+      handleCurrentChange (pageNum) {
+        this.page.pageNum = pageNum
+        this.doGetData()
+      },
       doGetData (searchData) {
         sysUserService.list({searchData,
           cb: ({ sysRoles, sysUsers, page }) => {
@@ -179,7 +183,7 @@
         const { code, msg, data } = await sysUserService.updateOne(this.ruleForm)
         this.loading = false
         if (code === enums.SUCCESS_CODE) {
-          this.tableData[this.updateIndex] = doCopyObj(this.tableData[this.updateIndex], data)
+          this.tableData[this.updateIndex] = doCopyObj(this.tableData[this.updateIndex], this.setTableData(data))
           this.dialogVisible = false
           helper.success()
         } else helper.error(msg)

@@ -41,6 +41,18 @@ const articleService = {
   async findById ({ searchData={}, cb }) {
     const { code, data } = await request.apiPost(api.article.findById, searchData)
     if (code === enums.SUCCESS_CODE) cb(data)
+  },
+  addOne (params={}) {
+    return request.apiPost(api.article.addOne, params)
+  },
+  updateOne (params={}) {
+    return request.apiPost(api.article.updateOne, params)
+  },
+  updateByArticleContent(params={}) {
+    return request.apiPost(api.article.updateByArticleContent, params)
+  },
+  deleteOne (id) {
+    return request.apiGet(api.article.deleteOne, { id })
   }
 }
 /*
@@ -99,12 +111,26 @@ const sysRoleService = {
   addOne (params={}) {
     return request.apiPost(api.sysRole.addOne, params)
   },
-  updateOne (params={}) {
-    return request.apiPost(api.sysRole.updateOne, params)
+  updateByRoleName (params={}) {
+    return request.apiPost(api.sysRole.updateByRoleName, params)
+  },
+  updateByAuthorityList (params={}) {
+    return request.apiPost(api.sysRole.updateByAuthorityList, params)
   },
   deleteOne (id) {
     return request.apiGet(api.sysRole.deleteOne, { id })
   }
+}
+
+/*
+* 单张图片上传
+* @params file
+* */
+const imgUploadService = (file) => {
+  const formData = new FormData()
+  formData.append('file', file)
+
+  return request.apiFile(api.imgUpload, formData)
 }
 
 export {
@@ -114,5 +140,6 @@ export {
   commentService,
   progressService,
   sysUserService,
-  sysRoleService
+  sysRoleService,
+  imgUploadService
 }

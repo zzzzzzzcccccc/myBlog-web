@@ -52,6 +52,7 @@
   .wrapper-header{
     width: 100%;
     height: 60px;
+    border-bottom: 1px solid #a1a1a1;
   }
 
   .wrapper-main{
