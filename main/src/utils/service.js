@@ -20,7 +20,7 @@ const shareService = {
   async list ({ searchData={}, cb }) {
     toggleLoading(true)
     const { code, data } = await request.apiGet(api.share.list, searchData)
-    toggleLoading(true)
+    toggleLoading(false)
     if (code === enums.SUCCESS_CODE) cb(data)
   },
   async updateVisitCount ({ id, cb }) {
@@ -44,7 +44,7 @@ const articleService = {
   async list ({ searchData={}, cb }) {
     toggleLoading(true)
     const { code, data } = await request.apiGet(api.article.list, searchData)
-    toggleLoading(true)
+    toggleLoading(false)
     if (code === enums.SUCCESS_CODE) cb(data)
   },
   async updateVisitCount ({ id, cb }) {
