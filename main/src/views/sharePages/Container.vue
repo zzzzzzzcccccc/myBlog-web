@@ -66,7 +66,6 @@
         shareService.list({
           searchData: { ...this.page },
           cb: ({ articleTypeList, list, page }) => {
-            this.first = false
             this.articleTypeList = articleTypeList
             this.list = [...this.list, ...this.setList(list, articleTypeList)]
             this.page = page

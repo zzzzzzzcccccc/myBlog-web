@@ -5,21 +5,21 @@
       <top-nav :activeId="3"></top-nav>
       <!--内容-->
       <section class="wrapper-body">
-        <div class="article-container">
-          <div class="article-container-item">
-            <ul class="article-list"
+        <div class="main-article-container">
+          <div class="main-article-container-item">
+            <ul class="main-article-list"
                 v-infinite-scroll="loadMore"
                 infinite-scroll-disabled="loading"
                 infinite-scroll-distance="10">
               <li v-for="(item, index) in list" :key="index" @click="bindLink(item)">
                 <div class="main-article-title"><span>{{ item.articleTitle }}</span></div>
-                <div class="article-label">
+                <div class="main-article-label">
                   <a :href="item.articleTypeHref">
-                    <span class="article-list-type-tips" :style="{ backgroundColor: `${item.articleTypeLabelColor}` }">{{ item.articleTypeName }}</span>
+                    <span class="main-article-list-type-tips" :style="{ backgroundColor: `${item.articleTypeLabelColor}` }">{{ item.articleTypeName }}</span>
                   </a>
-                  <span :title="item.articleAuthor ? item.articleAuthor : '未知作者'" class="article-label-item font-over">{{ item.articleAuthor ? item.articleAuthor : '未知作者' }}</span>
-                  <span :title="item.createTime" class="article-label-item font-over">{{ item.createTime }}</span>
-                  <span :title="item.visitCount" class="article-label-item font-over">{{ item.visitCount }}人阅读</span>
+                  <span :title="item.articleAuthor ? item.articleAuthor : '未知作者'" class="main-article-label-item font-over">{{ item.articleAuthor ? item.articleAuthor : '未知作者' }}</span>
+                  <span :title="item.createTime" class="main-article-label-item font-over">{{ item.createTime }}</span>
+                  <span :title="item.visitCount" class="main-article-label-item font-over">{{ item.visitCount }}人阅读</span>
                 </div>
               </li>
             </ul>
@@ -67,7 +67,6 @@
         articleService.list({
           searchData: { ...this.page },
           cb: ({ articleTypeList, list, page }) => {
-            this.first = false
             this.articleTypeList = articleTypeList
             this.list = [...this.list, ...this.setList(list, articleTypeList)]
             this.page = page
