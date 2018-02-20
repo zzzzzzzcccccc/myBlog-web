@@ -1,0 +1,25 @@
+.toast
+  position fixed
+  left 50%
+  transform translate(-50%,-50%) scale(1)
+  text-align center
+  z-index 5001
+  max-width 80%
+  color #fff
+  background rgba(0, 0, 0, 0.7)
+  overflow hidden
+  padding 8px
+  border-radius 4px
+  font-size 14px
+.toast-top
+  top 5%
+.toast-middle
+  top 45%
+.toast-bottom
+  top: 95%
+
+/* 动画 */
+.toast-fade-enter-active, .toast-fade-leave-active
+  transition: opacity .3s;
+.toast-fade-enter, .toast-fade-leave-active
+  opacity 0

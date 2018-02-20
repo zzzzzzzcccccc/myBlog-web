@@ -1,0 +1,75 @@
+/* 移动 */
+@media screen  and (min-width: 320px) and (max-width: 720px) {
+  .wrapper-container-body{
+    padding: 28px 0;
+  }
+  .article-type-info{
+    width: 100%;
+  }
+  .article-title{
+    font-size: 16px;
+  }
+}
+
+/* pc */
+@media screen and (min-width: 721px) {
+  .wrapper-container-body{
+    padding: 36px 0;
+  }
+  .article-type-info{
+    min-width: 720px;
+    max-width: 1000px;
+  }
+  .article-title{
+    font-size: 18px;
+  }
+}
+
+.wrapper-container-body{
+  width: 100%;
+}
+
+.article-type-info{
+  margin: 0 auto;
+}
+
+.article-list{
+  width: 100%;
+}
+.article-list-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+  position: relative;
+  padding: 10px 100px 10px 10px;
+  border-bottom: 1px solid #a1a1a1;
+  cursor: pointer;
+  color: #666;
+}
+.article-list-item:hover{
+  background: rgba(0, 0, 0, 0.1);
+}
+.article-list-item:hover .article-title{
+  text-decoration: underline;
+  color: #333;
+}
+.article-title{
+  font-weight: 700;
+}
+.article-date{
+  position: absolute;
+  display: inline-block;
+  right: 10px;
+  bottom: 10px;
+}
+
+.null-tips{
+  width: 100%;
+  text-align: center;
+  margin-top: 35%;
+  font-size: 26px;
+  font-weight: 500;
+  font-family: 'Trebuchet MS', Arial, 'Lucida Grande', Verdana, Lucida, Helvetica, sans-serif;
+}

@@ -99,7 +99,7 @@ export function toggleLoading (boolean=false) {
       lock: true,
       text: 'Loading',
       spinner: 'el-icon-loading',
-      background: 'transparent'
+      background: 'rgba(0, 0, 0, 0.1)'
     })
   } else {
     LoadingService.close()
@@ -144,6 +144,14 @@ export function doCopyObj (copyObj, obj) {
   }
 
   return copyObj
+}
+
+/*
+* 多页面之间跳转
+* @params targetPath
+* */
+export function linkPath (targetPath) {
+  location.href = location.href.indexOf('/main') === -1 ? `${targetPath}` : `/main/${targetPath}`
 }
 
 

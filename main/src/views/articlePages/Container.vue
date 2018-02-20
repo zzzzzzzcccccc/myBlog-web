@@ -31,6 +31,7 @@
 <script>
   import Vue from 'vue'
   import { TopNav } from '../Common'
+  import { linkPath } from '../../utils/public'
   import { articleService } from '../../utils/service'
   import { InfiniteScroll, ArrowLeftIcon, ClickCountIcon } from '../../components'
 
@@ -46,7 +47,6 @@
       return {
         articleTypeList: [],
         list: [],
-        first: true, // 是否第一次加载列表
         page: {
           pageNum: 0,
           pageSize: 15,
@@ -59,7 +59,8 @@
     },
     methods: {
       loadMore () {
-        this.setPage(5)
+        this.page.pageNum++
+        if (this.page.total) if (this.page.total === this.list.length) return false
         this.loading = true
         articleService.list({
           searchData: { ...this.page },
@@ -81,21 +82,11 @@
 
         return list
       },
-      setPage (pageSize) {
-        this.page.pageNum++
-        if (!this.first) {
-          if (this.list.length === this.page.total) {
-            return false
-          } else {
-            this.page.pageSize = pageSize
-          }
-        }
-      },
       bindLink ({ id }) {
         articleService.updateVisitCount({
           id: id,
           cb: () => {
-            location.href = location.href.indexOf('/main') === -1 ? `/insideArticleInfo.html?id=${id}` : `/main/insideArticleInfo.html?id=${id}`
+            linkPath(`/insideArticleInfo.html?id=${id}`)
           }
         })
       }

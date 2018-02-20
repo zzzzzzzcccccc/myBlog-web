@@ -2,7 +2,6 @@ import api from './api'
 import request from './request'
 import enums from './enums'
 import helper from './helper'
-import { toggleLoading } from './public'
 
 /*
 * 首页数据
@@ -11,6 +10,10 @@ const indexService = {
   async navList({ cb }) {
     const { code, data } = await request.apiGet(api.index.navList)
     if (code === enums.SUCCESS_CODE) cb(data)
+  },
+  async allArticleList({ articleTypeId, cb }) {
+    const { code, data } = await request.apiGet(api.index.allArticleList, { articleTypeId })
+    if (code === enums.SUCCESS_CODE) cb(data)
   }
 }
 /*
@@ -18,9 +21,7 @@ const indexService = {
 * */
 const shareService = {
   async list ({ searchData={}, cb }) {
-    toggleLoading(true)
     const { code, data } = await request.apiGet(api.share.list, searchData)
-    toggleLoading(false)
     if (code === enums.SUCCESS_CODE) cb(data)
   },
   async updateVisitCount ({ id, cb }) {
@@ -38,13 +39,20 @@ const shareService = {
   }
 }
 /*
+* 文章类型数据
+* */
+const articleTypeService = {
+  async allList ({ cb }) {
+    const { code, data } = await request.apiGet(api.articleType.allList)
+    if (code === enums.SUCCESS_CODE) cb(data)
+  }
+}
+/*
 * 文章数据
 * */
 const articleService = {
   async list ({ searchData={}, cb }) {
-    toggleLoading(true)
     const { code, data } = await request.apiGet(api.article.list, searchData)
-    toggleLoading(false)
     if (code === enums.SUCCESS_CODE) cb(data)
   },
   async updateVisitCount ({ id, cb }) {
@@ -75,6 +83,9 @@ const commentService = {
   async list ({ searchData={}, cb }) {
     const { code, data } = await request.apiGet(api.comment.list, searchData)
     if (code === enums.SUCCESS_CODE) cb(data)
+  },
+  addOne (params={}) {
+    return request.apiPost(api.comment.addOne, params)
   }
 }
 /*
@@ -94,9 +105,7 @@ const sysUserService = {
     return request.apiPost(api.sysUser.accountLogin, params)
   },
   async list ({ searchData={}, cb }) {
-    toggleLoading(true)
     const { code, msg, data } = await request.apiGet(api.sysUser.list, searchData)
-    toggleLoading(false)
     if (code === enums.SUCCESS_CODE) cb(data)
     else helper.error(msg)
   },
@@ -115,9 +124,7 @@ const sysUserService = {
 * */
 const sysRoleService = {
   async list ({ searchData={}, cb }) {
-    toggleLoading(true)
     const { code, msg, data } = await request.apiGet(api.sysRole.list, searchData)
-    toggleLoading(false)
     if (code === enums.SUCCESS_CODE) cb(data)
     else helper.error(msg)
   },
@@ -149,6 +156,7 @@ const imgUploadService = (file) => {
 export {
   indexService,
   shareService,
+  articleTypeService,
   articleService,
   commentService,
   progressService,

@@ -48,19 +48,18 @@
       return {
         articleTypeList: [],
         list: [],
-        first: true, // 是否第一次加载列表
         page: {
           pageNum: 0,
-          pageSize: 15,
-          totalPage: null,
-          total: null,
-          limitPageNum: null
-        }
+          pageSize: 10,
+          total: null
+        },
+        loading: false
       }
     },
     methods: {
       loadMore () {
-        this.setPage(5)
+        this.page.pageNum++
+        if (this.page.total) if (this.page.total === this.list.length) return false
         this.loading = true
         shareService.list({
           searchData: { ...this.page },
@@ -81,16 +80,6 @@
         })
 
         return list
-      },
-      setPage (pageSize) {
-        this.page.pageNum++
-        if (!this.first) {
-          if (this.list.length === this.page.total) {
-            return false
-          } else {
-            this.page.pageSize = pageSize
-          }
-        }
       },
       bindLink ({ id, articleHref }) {
         shareService.updateVisitCount({

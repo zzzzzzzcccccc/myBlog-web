@@ -7,6 +7,7 @@ import ProjectIcon from './ProjectIcon/ProjectIcon'
 import ArrowLeftIcon from './ArrowLeftIcon/ArrowLeftIcon'
 import ClickCountIcon from './ClickCountIcon/ClickCountIcon'
 import Edit from './Edit/Edit'
+import Toast from './Toast/index.js'
 
 export {
   InfiniteScroll,
@@ -17,5 +18,6 @@ export {
   ProjectIcon,
   ArrowLeftIcon,
   ClickCountIcon,
-  Edit
+  Edit,
+  Toast
 }

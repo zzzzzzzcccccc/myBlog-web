@@ -3,7 +3,8 @@ const baseUrl = `https://zouchenwd.cn:8090`
 
 export default {
   index: { // 首页
-    navList: baseUrl + '/index/navList'
+    navList: baseUrl + '/index/navList',
+    allArticleList: baseUrl + '/index/allArticleList'
   },
   share: { // 分享
     list: baseUrl + '/outside/article/list',
@@ -11,6 +12,9 @@ export default {
     addOne: baseUrl + '/outside/article/addOne',
     updateOne: baseUrl + '/outside/article/updateOne',
     deleteOne: baseUrl + '/outside/article/deleteOne'
+  },
+  articleType: { // 文章分类
+    allList: baseUrl + '/articleType/allList'
   },
   article: { // 文章
     list: baseUrl + '/inside/article/list',
@@ -22,7 +26,8 @@ export default {
     deleteOne: baseUrl + '/inside/article/deleteOne'
   },
   comment: { // 评论
-    list: baseUrl + '/comment/list'
+    list: baseUrl + '/comment/list',
+    addOne: baseUrl + '/comment/addOne'
   },
   progress: { // 历程
     list: baseUrl + '/progress/list'
