@@ -151,7 +151,7 @@ export function doCopyObj (copyObj, obj) {
 * @params targetPath
 * */
 export function linkPath (targetPath) {
-  location.href = location.href.indexOf('/main') === -1 ? `${targetPath}` : `/main/${targetPath}`
+  location.href = location.href.indexOf('/main') === -1 ? `${targetPath}` : `/main${targetPath}`
 }
 
 
