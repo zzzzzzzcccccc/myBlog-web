@@ -8,7 +8,7 @@
           <ul class="article-list" v-if="insideArticles.length === 0 ? false : true">
             <li v-for="(item, index) in insideArticles" :key="index" @click="link('inside', item)">
               <div class="article-list-item">
-                <span class="article-list-item-label font-over">{{ item.articleTitle }}</span>
+                <span class="article-list-item-label article-type-title font-over">{{ item.articleTitle }}</span>
                 <span class="article-list-item-label article-date font-over">{{ item.createTime.split(' ')[0] }}</span>
               </div>
             </li>
@@ -16,7 +16,7 @@
           <ul class="article-list" v-if="outsideArticles.length === 0 ? false : true">
             <li v-for="(item, index) in outsideArticles" :key="index" @click="link('outside', item)">
               <div class="article-list-item">
-                <span class="article-list-item-label article-title font-over">{{ item.articleTitle }}</span>
+                <span class="article-list-item-label article-type-title font-over">{{ item.articleTitle }}</span>
                 <span class="article-list-item-label article-date font-over">{{ item.createTime.split(' ')[0] }}</span>
               </div>
             </li>

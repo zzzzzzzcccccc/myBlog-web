@@ -2,10 +2,12 @@
   <section class="wrapper-nav">
     <ul class="nav-container">
       <li v-for="(item, index) in getListType ? defaultList : list" :key="index">
-        <div class="nav-item"
-             :style="(activeId * 1) === item.id ? { border: `1px solid ${item.labelColor}`, color: `${item.labelColor}` } : { backgroundColor: `${item.labelColor}` }" @click="bindClick(item)">
-          <span>{{ item.name }}</span><span>{{ item.articleCount }}</span>
-        </div>
+        <a :href="item.href">
+          <div class="nav-item"
+               :style="(activeId * 1) === item.id ? { border: `1px solid ${item.labelColor}`, color: `${item.labelColor}` } : { backgroundColor: `${item.labelColor}` }">
+            <span>{{ item.name }}</span><span>{{ item.articleCount }}</span>
+          </div>
+        </a>
       </li>
     </ul>
   </section>
@@ -42,9 +44,6 @@
         if (this.getListType) {
           articleTypeService.allList({ cb: data => this.defaultList = data })
         }
-      },
-      bindClick ({ id }) {
-        linkPath(`/articleType.html?articleTypeId=${id}`)
       }
     }
   }
