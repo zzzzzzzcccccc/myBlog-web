@@ -73,7 +73,6 @@
       },
       link (type, item) {
         if (type === 'inside') {
-          console.log(item)
           articleService.updateVisitCount({
             id: item.id,
             cb: () => linkPath(`/insideArticleInfo.html?id=${item.id}`)
@@ -89,6 +88,6 @@
   }
 </script>
 
-<style>
+<style scoped>
   @import "../../assets/css/pages/articleType/index.less";
 </style>
