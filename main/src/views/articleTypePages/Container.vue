@@ -75,7 +75,9 @@
         if (type === 'inside') {
           articleService.updateVisitCount({
             id: item.id,
-            cb: () => linkPath(`/insideArticleInfo.html?id=${item.id}`)
+            cb: () => {
+              location.href = location.href.indexOf('/main') === -1 ? `/insideArticleInfo.html?id=${item.id}` : `/insideArticleInfo.html?id=${item.id}`
+            }
           })
         } else if (type === 'outside') {
           shareService.updateVisitCount({
