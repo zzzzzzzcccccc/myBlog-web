@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper"">
+  <div class="wrapper">
     <section class="wrapper-container">
       <!--头部-->
       <article-top-nav :getListType="true" :activeId="httpParams.articleTypeId" ref="nav"></article-top-nav>
@@ -76,7 +76,7 @@
           articleService.updateVisitCount({
             id: item.id,
             cb: () => {
-              location.href = location.href.indexOf('/main') === -1 ? `/insideArticleInfo.html?id=${item.id}` : `/insideArticleInfo.html?id=${item.id}`
+              linkPath(`/insideArticleInfo.html?id=${item.id}`)
             }
           })
         } else if (type === 'outside') {

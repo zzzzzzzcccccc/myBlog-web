@@ -86,7 +86,7 @@
         articleService.updateVisitCount({
           id: id,
           cb: () => {
-            location.href = location.href.indexOf('/main') === -1 ? `/insideArticleInfo.html?id=${id}` : `/main/insideArticleInfo.html?id=${id}`
+            linkPath(`/insideArticleInfo.html?id=${id}`)
           }
         })
       }

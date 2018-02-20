@@ -44,7 +44,7 @@
         }
       },
       bindClick ({ id }) {
-        location.href = location.href.indexOf('/main') === -1 ? `/articleType.html?articleTypeId=${id}` : `/articleType.html?articleTypeId=${id}`
+        linkPath(`/articleType.html?articleTypeId=${id}`)
       }
     }
   }
