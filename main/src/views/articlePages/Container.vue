@@ -12,9 +12,11 @@
                 infinite-scroll-disabled="loading"
                 infinite-scroll-distance="10">
               <li v-for="(item, index) in list" :key="index" @click="bindLink(item)">
-                <div class="article-title"><span>{{ item.articleTitle }}</span></div>
+                <div class="main-article-title"><span>{{ item.articleTitle }}</span></div>
                 <div class="article-label">
-                  <span class="article-list-type" :style="{ backgroundColor: `${item.articleTypeLabelColor}` }">{{ item.articleTypeName }}</span>
+                  <a :href="item.articleTypeHref">
+                    <span class="article-list-type-tips" :style="{ backgroundColor: `${item.articleTypeLabelColor}` }">{{ item.articleTypeName }}</span>
+                  </a>
                   <span :title="item.articleAuthor ? item.articleAuthor : '未知作者'" class="article-label-item font-over">{{ item.articleAuthor ? item.articleAuthor : '未知作者' }}</span>
                   <span :title="item.createTime" class="article-label-item font-over">{{ item.createTime }}</span>
                   <span :title="item.visitCount" class="article-label-item font-over">{{ item.visitCount }}人阅读</span>
@@ -78,6 +80,7 @@
           const filterObj = articleTypeList.filter(fItem => item.articleTypeId === fItem.id)[0]
           item.articleTypeName = filterObj.name
           item.articleTypeLabelColor = filterObj.labelColor
+          item.articleTypeHref = filterObj.href
         })
 
         return list
