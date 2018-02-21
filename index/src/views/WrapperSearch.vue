@@ -61,6 +61,7 @@
         this.searchActive = false
         this.historyVisible = false
         this.list = []
+        this.searchData = ''
       },
       handleSearchClick (item) {
         this.addOneHistorySearchList(item)
