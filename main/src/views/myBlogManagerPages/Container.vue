@@ -12,7 +12,7 @@
       </section>
       <!--内容-->
       <section class="wrapper-container">
-        <transition>
+        <transition name="move" mode="out-in">
           <router-view class="wrapper-container-info"></router-view>
         </transition>
       </section>
@@ -55,6 +55,10 @@
     border-bottom: 1px solid #a1a1a1;
   }
 
+  .wrapper-slider{
+    border-right: 1px solid #a1a1a1;
+  }
+
   .wrapper-main{
     background: #ffffff;
     width: 100%;
@@ -72,5 +76,13 @@
     padding: 20px;
     overflow-x: hidden;
     overflow-y: auto;
+  }
+
+  /* 切换动画 */
+  .move-enter-active,.move-leave-active{
+    transition: opacity .3s;
+  }
+  .move-enter,.move-leave{
+    opacity: 0;
   }
 </style>

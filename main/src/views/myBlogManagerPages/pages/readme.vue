@@ -1,3 +1,3 @@
 <template>
-  <div>readme111</div>
+  <div>公告嗯嗯没有内容</div>
 </template>

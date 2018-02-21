@@ -35,7 +35,7 @@
 
 <style scoped>
   .wrapper-slider{
-    border-right: 0;
+    border: 0;
   }
   .wrapper-slider:not(.el-menu--collapse){
     width: 200px;

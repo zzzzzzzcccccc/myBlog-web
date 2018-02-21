@@ -45,6 +45,15 @@ const articleTypeService = {
   async allList ({ cb }) {
     const { code, data } = await request.apiGet(api.articleType.allList)
     if (code === enums.SUCCESS_CODE) cb(data)
+  },
+  addOne (params={}) {
+    return request.apiPost(api.articleType.addOne, params)
+  },
+  updateOne (params={}) {
+    return request.apiPost(api.articleType.updateOne, params)
+  },
+  deleteOne (id) {
+    return request.apiGet(api.articleType.deleteOne, { id })
   }
 }
 /*
@@ -95,6 +104,15 @@ const progressService = {
   async list ({ searchData={}, cb }) {
     const { code, data } = await request.apiGet(api.progress.list, searchData)
     if (code === enums.SUCCESS_CODE) cb(data)
+  },
+  addOne (params={}) {
+    return request.apiPost(api.progress.addOne, params)
+  },
+  updateOne (params={}) {
+    return request.apiPost(api.progress.updateOne, params)
+  },
+  deleteOne (id) {
+    return request.apiGet(api.progress.deleteOne, { id })
   }
 }
 /*

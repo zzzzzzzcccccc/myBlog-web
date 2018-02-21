@@ -5,6 +5,7 @@ import AboutMeIcon from './AboutMeIcon/AboutMeIcon'
 import ProjectIcon from './ProjectIcon/ProjectIcon'
 import VisitCountIcon from './VisitCountIcon/VisitCountIcon'
 import GitHubIcon from './GitHubIcon/GitHubIcon'
+import CloseIcon from './CloseIcon/CloseIcon'
 
 export {
   SearchIcon,
@@ -13,5 +14,6 @@ export {
   AboutMeIcon,
   ProjectIcon,
   VisitCountIcon,
-  GitHubIcon
+  GitHubIcon,
+  CloseIcon
 }

@@ -3,7 +3,7 @@
     <ul class="nav-container">
       <li v-for="(item, index) in getListType ? defaultList : list" :key="index">
         <a :href="item.href">
-          <div class="nav-item"
+          <div class="nav-item font-over"
                :style="(activeId * 1) === item.id ? { border: `1px solid ${item.labelColor}`, color: `${item.labelColor}` } : { backgroundColor: `${item.labelColor}` }">
             <span>{{ item.name }}</span><span>{{ item.articleCount }}</span>
           </div>
@@ -60,7 +60,6 @@
     }
     .nav-item{
       font-size: 14px;
-      padding: 3px 6px;
       border-radius: 3px;
     }
   }
@@ -73,17 +72,12 @@
     }
     .nav-item{
       font-size: 16px;
-      padding: 6px 12px;
       border-radius: 6px;
     }
   }
 
   .wrapper-nav{
     width: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 10;
     background: rgba(0, 0, 0, 0.1);
   }
 
@@ -98,5 +92,7 @@
   .nav-item{
     color: #fff;
     cursor: pointer;
+    font-size: 16px;
+    padding: 6px 12px;
   }
 </style>

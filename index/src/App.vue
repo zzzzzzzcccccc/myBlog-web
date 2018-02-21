@@ -6,8 +6,8 @@
 
       <div class="wrapper-info">
         <!--搜索-->
-        <wrapper-search></wrapper-search>
-        <section class="wrapper-info-container">
+        <wrapper-search class="wrapper-info-search" ref="searchProps"></wrapper-search>
+        <section class="wrapper-info-container" @click="handleScreenClick">
           <!--导航栏-->
           <wrapper-nav :list="config.navList" v-if="config.navList"></wrapper-nav>
           <!--底部-->
@@ -37,7 +37,10 @@
     computed: {
       ...mapState(['config'])
     },
-    created () {
+    methods: {
+      handleScreenClick () {
+        this.$refs.searchProps.handleInputBlur()
+      }
     }
   }
 </script>
@@ -59,6 +62,13 @@
     right: 0;
     bottom: 0;
     z-index: 10;
+  }
+
+  .wrapper-info-search{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 20;
   }
 
   .wrapper-info-container{

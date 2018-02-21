@@ -4,10 +4,10 @@
       <h3 class="login-title">管理平台</h3>
       <el-form :model="ruleForm" :rules="rules" ref="ruleForm" size="mini" status-icon>
         <el-form-item prop="username">
-          <el-input v-model="ruleForm.username" placeholder="账号"></el-input>
+          <el-input v-model="ruleForm.username" placeholder="账号" @keyup.enter.native="login('ruleForm')"></el-input>
         </el-form-item>
         <el-form-item prop="password">
-          <el-input type="password" v-model="ruleForm.password" placeholder="密码"></el-input>
+          <el-input type="password" v-model="ruleForm.password" placeholder="密码" @keyup.enter.native="login('ruleForm')"></el-input>
         </el-form-item>
         <div class="form-submit">
           <el-button type="primary" @click="login('ruleForm')" :loading="loading">登录</el-button>

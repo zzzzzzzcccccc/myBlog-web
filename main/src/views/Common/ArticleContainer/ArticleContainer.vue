@@ -26,7 +26,6 @@
   /* 移动 */
   @media screen and (min-width: 320px) and (max-width: 720px){
     .article-container{
-      margin: 26px auto 0 auto;
       padding: 10px;
     }
     .article-info{
@@ -43,7 +42,6 @@
   /* pc */
   @media screen and (min-width: 721px) {
     .article-container{
-      margin: 34px auto 0 auto;
       padding: 20px;
     }
     .article-info{

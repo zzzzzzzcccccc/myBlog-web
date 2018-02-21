@@ -14,7 +14,10 @@ export default {
     deleteOne: baseUrl + '/outside/article/deleteOne'
   },
   articleType: { // 文章分类
-    allList: baseUrl + '/articleType/allList'
+    allList: baseUrl + '/articleType/allList',
+    addOne: baseUrl + '/articleType/addOne',
+    updateOne: baseUrl + '/articleType/updateOne',
+    deleteOne: baseUrl + '/articleType/deleteOne',
   },
   article: { // 文章
     list: baseUrl + '/inside/article/list',
@@ -30,7 +33,10 @@ export default {
     addOne: baseUrl + '/comment/addOne'
   },
   progress: { // 历程
-    list: baseUrl + '/progress/list'
+    list: baseUrl + '/progress/list',
+    addOne: baseUrl + '/progress/addOne',
+    updateOne: baseUrl + '/progress/updateOne',
+    deleteOne: baseUrl + '/progress/deleteOne'
   },
   sysUser: { // 用户管理
     accountLogin: baseUrl + '/sysUser/accountLogin',
