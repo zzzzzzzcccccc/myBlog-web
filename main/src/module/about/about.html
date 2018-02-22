@@ -13,4 +13,28 @@
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="static/js/snow.js"></script>
 </body>
+<script>
+  (function () {
+    var lessThenIE8 = function () {
+      var UA = navigator.userAgent,
+        isIE = UA.indexOf('MSIE') > -1,
+        v = isIE ? /\d+/.exec(UA.split(';')[1]) : 'no ie';
+      return v <= 8;
+    }();
+    if(lessThenIE8){
+      alert('您的浏览器版本过低，建议使用高版本IE(IE9+)、谷歌、火狐、360浏览器等')
+      setTimeout(function () {
+        window.location.href = 'http://rj.baidu.com/soft/detail/14744.html?ald'
+      }, 2000)
+    }
+  })()
+
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?92236512f30ae30800254c301f4ac0c9";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
 </html>
