@@ -17,10 +17,10 @@
           <template slot-scope="scope">
             <el-tooltip class="font-over" effect="dark" :content="'' + scope.row[item.name]" placement="top-start">
               <span class="cell-inner" v-if="item.name === 'githubHref'">
-                <a :href="scope.row[item.name]" target="_blank">{{ scope.row[item.name] }}</a>
+                <a :href="scope.row[item.name]" target="_blank"><el-button size="mini">点击查看</el-button></a>
               </span>
               <span class="cell-inner" v-else-if="item.name === 'projectHref'">
-                <a :href="scope.row[item.name]" target="_blank">{{ scope.row[item.name] }}</a>
+                <a :href="scope.row[item.name]" target="_blank"><el-button size="mini">点击查看</el-button></a>
               </span>
               <span class="cell-inner" v-else>{{ scope.row[item.name] }}</span>
             </el-tooltip>

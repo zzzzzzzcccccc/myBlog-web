@@ -14,6 +14,11 @@ const indexService = {
   async allArticleList({ articleTypeId, cb }) {
     const { code, data } = await request.apiGet(api.index.allArticleList, { articleTypeId })
     if (code === enums.SUCCESS_CODE) cb(data)
+  },
+  async visitCountList ({ searchData={}, cb }) {
+    const { code, msg, data } = await request.apiGet(api.index.visitCountList, searchData)
+    if (code === enums.SUCCESS_CODE) cb(data)
+    else helper.error(msg)
   }
 }
 /*
@@ -95,6 +100,9 @@ const commentService = {
   },
   addOne (params={}) {
     return request.apiPost(api.comment.addOne, params)
+  },
+  deleteOne (id) {
+    return request.apiGet(api.comment.deleteOne, { id })
   }
 }
 /*
@@ -161,6 +169,45 @@ const sysRoleService = {
 }
 
 /*
+* 首页导航栏
+* */
+const globalNavService = {
+  async list ({ cb }) {
+    const {code, msg, data} = await request.apiGet(api.globalNav.list)
+    if (code === enums.SUCCESS_CODE) cb(data)
+    else helper.error(msg)
+  },
+  addOne (params={}) {
+    return request.apiPost(api.globalNav.addOne, params)
+  },
+  updateOne (params={}) {
+    return request.apiPost(api.globalNav.updateOne, params)
+  },
+  deleteOne (id) {
+    return request.apiGet(api.globalNav.deleteOne, { id })
+  }
+}
+
+/*
+* 首页背景图
+* */
+const globalBannerService = {
+  async list ({ cb }) {
+    const {code, msg, data} = await request.apiGet(api.globalBanner.list)
+    if (code === enums.SUCCESS_CODE) cb(data)
+    else helper.error(msg)
+  },
+  addOne (params={}) {
+    return request.apiPost(api.globalBanner.addOne, params)
+  },
+  updateOne (params={}) {
+    return request.apiPost(api.globalBanner.updateOne, params)
+  },
+  deleteOne (id) {
+    return request.apiGet(api.globalBanner.deleteOne, { id })
+  }
+}
+/*
 * 单张图片上传
 * @params file
 * */
@@ -180,5 +227,7 @@ export {
   progressService,
   sysUserService,
   sysRoleService,
+  globalNavService,
+  globalBannerService,
   imgUploadService
 }

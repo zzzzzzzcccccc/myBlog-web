@@ -26,7 +26,10 @@ import {
   Option,
   Tree,
   Tag,
-  ColorPicker
+  ColorPicker,
+  Row,
+  Col,
+  DatePicker
 } from 'element-ui'
 Vue.prototype.$ELEMENT = { size: 'small' }
 Vue.use(Icon)
@@ -53,6 +56,9 @@ Vue.use(Option)
 Vue.use(Tree)
 Vue.use(Tag)
 Vue.use(ColorPicker)
+Vue.use(Row)
+Vue.use(Col)
+Vue.use(DatePicker)
 
 const router = createRouter()
 

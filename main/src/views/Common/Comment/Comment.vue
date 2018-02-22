@@ -1,9 +1,9 @@
 <template>
   <div class="comment-container">
     <ul class="comment-body" v-if="list.length === 0 ? false : true">
-      <li class="comment-header"><span>评论：</span></li>
+      <li class="comment-header" style="border-bottom: 1px solid #a1a1a1;"><span>评论：</span></li>
       <li v-for="(item, index) in list" :key="index" :id="`commentId-${item.id}`">
-        <h3 class="comment-title">{{ item.commentName }}</h3>
+        <h3 class="comment-title"><span>{{ item.commentName }}</span>说：</h3>
         <article class="comment-txt" v-html="item.commentContent"></article>
         <section class="comment-footer">
           <span>{{ item.createTime }}</span>
@@ -138,13 +138,17 @@
   }
 
   .comment-body li {
-    border-bottom: 1px solid #a1a1a1;
+    border-bottom: 1px dashed #a1a1a1;
     padding: 8px;
   }
 
   .comment-title{
     font-weight: 500;
     padding-bottom: 10px;
+  }
+  .comment-title span{
+    font-weight: 700;
+    font-family: 'Trebuchet MS', Arial, 'Lucida Grande', Verdana, Lucida, Helvetica, sans-serif;
   }
 
   .comment-txt{
@@ -188,6 +192,7 @@
 
   .add-comment-container{
     width: 100%;
+    margin-top: 60px;
   }
   .add-comment-header{
     padding-bottom: 16px;
@@ -235,7 +240,7 @@
     border: 0;
     color: #fff;
     border-radius: 4px;
-    padding: 6px 0;
+    padding: 10px 0;
     text-align: center;
     cursor: pointer;
   }

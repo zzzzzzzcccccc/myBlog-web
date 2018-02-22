@@ -1,10 +1,11 @@
-const baseUrl = `http://127.0.0.1:8080`
-// const baseUrl = `https://zouchenwd.cn:8090`
+// const baseUrl = `http://127.0.0.1:8080`
+const baseUrl = `https://zouchenwd.cn:8090`
 
 export default {
   index: { // 首页
     navList: baseUrl + '/index/navList',
-    allArticleList: baseUrl + '/index/allArticleList'
+    allArticleList: baseUrl + '/index/allArticleList',
+    visitCountList: baseUrl + '/index/visitCountList'
   },
   share: { // 分享
     list: baseUrl + '/outside/article/list',
@@ -30,7 +31,8 @@ export default {
   },
   comment: { // 评论
     list: baseUrl + '/comment/list',
-    addOne: baseUrl + '/comment/addOne'
+    addOne: baseUrl + '/comment/addOne',
+    deleteOne: baseUrl + '/comment/deleteOne'
   },
   progress: { // 历程
     list: baseUrl + '/progress/list',
@@ -51,6 +53,18 @@ export default {
     updateByRoleName: baseUrl + '/sysRole/updateByRoleName',
     updateByAuthorityList: baseUrl + '/sysRole/updateByAuthorityList',
     deleteOne: baseUrl + '/sysRole/deleteOne'
+  },
+  globalNav: { // 首页导航
+    list: baseUrl + '/globalNav/list',
+    addOne: baseUrl + '/globalNav/addOne',
+    updateOne: baseUrl + '/globalNav/updateOne',
+    deleteOne: baseUrl + '/globalNav/deleteOne'
+  },
+  globalBanner: { // 首页背景图
+    list: baseUrl + '/globalBanner/list',
+    addOne: baseUrl + '/globalBanner/addOne',
+    updateOne: baseUrl + '/globalBanner/updateOne',
+    deleteOne: baseUrl + '/globalBanner/deleteOne'
   },
   imgUpload: baseUrl + '/upload/file'
 }

@@ -85,7 +85,7 @@
           cb: ({ articleTypeList, insideArticle }) => {
             this.articleTypeList = articleTypeList
             this.insideArticle = insideArticle
-            document.title = this.insideArticle.articleTitle
+            document.title = `zc的个人站-${this.insideArticle.articleTitle}`
           }
         })
       },
