@@ -1,5 +1,4 @@
-个人站点全栈
-==========
+
 
 ```
 前端使用vue，首页使用ssr，内容页面使用vue-cli改造的多页应用，有后台管理系统。
@@ -21,8 +20,14 @@ git地址：https://github.com/z5829984520/myBlog-back-java
 ```
 适合会前端人改造下做二次开发。
 ```
+
+```
+使用方法
+npm run dev
+```
 ---
 
 >附上后台管理一些截图
 <img src="./screenshot/1.png" style="width: 100%" />
-<img src="./screenshot/2.png" style="width: 100% />
+<img src="./screenshot/2.png" style="width: 100%" />
+<img src="./screenshot/3.png" style="width: 100%" />
