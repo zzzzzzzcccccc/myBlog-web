@@ -42,6 +42,12 @@ const serve = (path, cache) => express.static(resolve(path), {
   maxAge: cache && isProd ? 60 * 60 * 24 * 30 : 0
 })
 
+// ejs 模板引擎
+const ejs = require('ejs')
+app.engine('html', ejs.__express)
+app.set('view engine', 'html')
+app.set('views', path.join(__dirname, 'views'))
+
 app.use('/dist', serve('./dist', true))
 app.use(favicon(path.resolve(__dirname, 'src/assets/img/ico.jpeg')))
 app.use('/service-worker.js', serve('./dist/service-worker.js'))
@@ -59,7 +65,7 @@ app.get('/index*', (req, res) => ssrRender(req, res))
 * 404
 * */
 app.get('*', (req, res) => {
-  res.status(404).end('404!')
+  res.status(404).render('404')
 })
 
 /*
