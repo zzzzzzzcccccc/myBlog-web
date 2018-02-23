@@ -48,24 +48,39 @@ app.engine('html', ejs.__express)
 app.set('view engine', 'html')
 app.set('views', path.join(__dirname, 'views'))
 
-app.use('/dist', serve('./dist', true))
 app.use(favicon(path.resolve(__dirname, 'src/assets/img/ico.jpeg')))
 app.use('/service-worker.js', serve('./dist/service-worker.js'))
 // 内容spa静态化
 app.use('/main/', serve('../main/dist', true))
+app.use('/dist', serve('./dist', true))
+
+const mainRouter = {
+  share: serve('../main/dist/share.html', true),
+  article: serve('../main/dist/article.html', true),
+  about: serve('../main/dist/about.html', true),
+  progress: serve('../main/dist/progress.html', true),
+  articleType: serve('../main/dist/articleType.html', true),
+  insideArticleInfo: serve('../main/dist/insideArticleInfo.html', true),
+  myBlogManager: serve('../main/dist/myBlogManager.html', true)
+}
+for (const key in mainRouter) {
+  app.use(`/main/${key}`, mainRouter[key])
+}
 
 /*
 * 路由控制规则
 * */
 app.get('/', (req, res) => ssrRender(req, res))
-
 app.get('/index*', (req, res) => ssrRender(req, res))
+app.get('/main/', (req, res) => { res.end() })
 
 /*
 * 404
 * */
 app.get('*', (req, res) => {
-  res.status(404).render('404')
+  res.render('404', {
+    status: 404
+  })
 })
 
 /*

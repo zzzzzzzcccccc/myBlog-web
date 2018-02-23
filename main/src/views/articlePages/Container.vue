@@ -88,7 +88,7 @@
         articleService.updateVisitCount({
           id: id,
           cb: () => {
-            linkPath(`/insideArticleInfo.html?id=${id}`)
+            linkPath(`/insideArticleInfo?id=${id}`)
           }
         })
       }
