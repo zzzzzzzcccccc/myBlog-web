@@ -29,3 +29,6 @@ npm run dev
 <img src="./screenshot/1.png" style="width: 100%" />
 <img src="./screenshot/2.png" style="width: 100%" />
 <img src="./screenshot/3.png" style="width: 100%" />
+
+
+>ps 年初了想换个公司 3年前端开发，略懂 node java 企鹅 304307393 邮箱 z304307393@163.com
