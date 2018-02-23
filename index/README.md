@@ -10,6 +10,8 @@ canvas特效是抄的，稍微改造了一下。
 本地想跑起来搭建一个本地mysql，在spring-boot项目里src/resources/application.yml文件里的active改成dev模式使用srping-data-jpa自动往mysql db里建表
 数据库使用的传统的mysql,数据库基本配置在dev和prod环境设置
 git地址：https://github.com/z5829984520/myBlog-back-java
+
+mysql下载地址:https://dev.mysql.com/downloads/mysql/
 ```
 
 
