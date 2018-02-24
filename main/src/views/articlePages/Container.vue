@@ -10,7 +10,7 @@
             <ul class="main-article-list"
                 v-infinite-scroll="loadMore"
                 infinite-scroll-disabled="loading"
-                infinite-scroll-distance="10">
+                infinite-scroll-distance="40">
               <li v-for="(item, index) in list" :key="index" @click="bindLink(item)">
                 <div class="main-article-title"><span>{{ item.articleTitle }}</span></div>
                 <div class="main-article-label">

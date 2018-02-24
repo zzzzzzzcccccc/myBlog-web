@@ -10,7 +10,7 @@
           <ul class="article-list-item"
               v-infinite-scroll="loadMore"
               infinite-scroll-disabled="loading"
-              infinite-scroll-distance="10">
+              infinite-scroll-distance="40">
             <li v-for="(item, index) in list" :key="index" class="article-list-info" @click="bindLink(item)">
               <div class="article-list-wrapper">
                 <div class="article-list-label">
@@ -86,9 +86,7 @@
       bindLink ({ id, articleHref }) {
         shareService.updateVisitCount({
           id: id,
-          cb: () => {
-            location.href = articleHref
-          }
+          cb: () => location.href = articleHref
         })
       }
     }
