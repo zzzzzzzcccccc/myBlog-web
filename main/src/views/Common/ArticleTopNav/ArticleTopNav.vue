@@ -5,7 +5,7 @@
         <a :href="item.href">
           <div class="nav-item"
                :style="(activeId * 1) === item.id ? { border: `1px solid ${item.labelColor}`, color: `${item.labelColor}` } : { backgroundColor: `${item.labelColor}` }">
-            <span>{{ item.name }}</span><span>{{ item.articleCount }}</span>
+            {{ item.name + item.articleCount }}
           </div>
         </a>
       </li>
@@ -94,5 +94,6 @@
     font-size: 16px;
     padding: 6px 12px;
     white-space: nowrap;
+    display: inline-block;
   }
 </style>
