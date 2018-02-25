@@ -57,6 +57,9 @@
       overflow-x: scroll;
       overflow-y: hidden;
     }
+    .nav-container li {
+      display: inline-block;
+    }
     .nav-item{
       font-size: 14px;
       border-radius: 3px;
