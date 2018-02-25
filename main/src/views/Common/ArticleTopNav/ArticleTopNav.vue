@@ -50,7 +50,6 @@
 </script>
 
 <style lang="css" scoped>
-
   /* 移动 */
   @media screen and (min-width: 320px) and (max-width: 720px) {
     .nav-container{
@@ -94,5 +93,6 @@
     cursor: pointer;
     font-size: 16px;
     padding: 6px 12px;
+    white-space: nowrap;
   }
 </style>
