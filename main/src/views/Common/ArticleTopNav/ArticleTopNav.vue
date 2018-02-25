@@ -3,7 +3,7 @@
     <ul class="nav-container">
       <li v-for="(item, index) in getListType ? defaultList : list" :key="index">
         <a :href="item.href">
-          <div class="nav-item font-over"
+          <div class="nav-item"
                :style="(activeId * 1) === item.id ? { border: `1px solid ${item.labelColor}`, color: `${item.labelColor}` } : { backgroundColor: `${item.labelColor}` }">
             <span>{{ item.name }}</span><span>{{ item.articleCount }}</span>
           </div>
