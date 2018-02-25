@@ -68,6 +68,10 @@
     .nav-container{
       min-width: 720px;
       max-width: 1000px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
     .nav-item{
       font-size: 16px;
@@ -82,10 +86,6 @@
 
   .nav-container{
     margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .nav-item{
