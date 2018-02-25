@@ -56,6 +56,7 @@
       width: 100%;
       overflow-x: scroll;
       overflow-y: hidden;
+      white-space: nowrap;
     }
     .nav-container li {
       display: inline-block;
