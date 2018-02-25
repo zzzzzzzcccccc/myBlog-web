@@ -75,6 +75,13 @@
   .article-txt{
     width: 100%;
     font-family: 'Trebuchet MS', Arial, 'Lucida Grande', Verdana, Lucida, Helvetica, sans-serif;
+    overflow: hidden;
+  }
+  /* 标题系列 */
+  #articleTxt h3, #articleTxt h4  #articleTxt h5 {
+    padding-bottom: 4px;
+    border-bottom: 1px solid #a1a1a1;
+    margin: 16px 0;
   }
   /* 图 */
   #articleTxt img{
@@ -85,8 +92,23 @@
     font-family: "PingFangSC-Regular", "Helvetica Neue", Helvetica, Arial, "微软雅黑", sans-serif;
     display: inline-block;
     background: #b5f9e2;
-    padding: 0.3rem 0.6rem;
-    font-weight: 200;
-    border-radius: 0.3rem;
+    width: 100%;
+    overflow: auto;
+    padding: 10px 20px;
+  }
+  /* ul li */
+  #articleTxt ul li{
+    list-style: disc inside;
+    padding: 4px;
+  }
+  /* ol li */
+  #articleTxt ol li{
+    list-style: decimal inside;
+    padding: 4px;
+  }
+
+  /* common li */
+  #articleTxt li {
+    font-family: "American Typewriter";
   }
 </style>
