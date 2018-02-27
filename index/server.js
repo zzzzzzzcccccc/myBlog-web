@@ -61,7 +61,8 @@ const mainRouter = {
   progress: serve('../main/dist/progress.html', true),
   articleType: serve('../main/dist/articleType.html', true),
   insideArticleInfo: serve('../main/dist/insideArticleInfo.html', true),
-  myBlogManager: serve('../main/dist/myBlogManager.html', true)
+  myBlogManager: serve('../main/dist/myBlogManager.html', true),
+  'baidu_verify_5zkiFIuBhO.html': serve('./baidu_verify_5zkiFIuBhO', true)
 }
 for (const key in mainRouter) {
   app.use(`/main/${key}`, mainRouter[key])
@@ -73,6 +74,7 @@ for (const key in mainRouter) {
 app.get('/', (req, res) => ssrRender(req, res))
 app.get('/index*', (req, res) => ssrRender(req, res))
 app.get('/main/', (req, res) => { res.end() })
+app.get('/baidu_verify_5zkiFIuBhO.html', (req, res) => { res.end() })
 
 /*
 * 404
