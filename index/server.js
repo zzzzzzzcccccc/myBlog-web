@@ -53,6 +53,7 @@ app.use('/service-worker.js', serve('./dist/service-worker.js'))
 // 内容spa静态化
 app.use('/main/', serve('../main/dist', true))
 app.use('/dist', serve('./dist', true))
+app.use('/z-uiExample', serve('./z-uiExample'), true)
 
 const mainRouter = {
   share: serve('../main/dist/share.html', true),
@@ -76,6 +77,7 @@ app.get('/', (req, res) => ssrRender(req, res))
 app.get('/index*', (req, res) => ssrRender(req, res))
 app.get('/main/', (req, res) => { res.end() })
 app.get('/baidu_verify_5zkiFIuBhO.html', (req, res) => { res.end() })
+app.get('/z-uiExample', (req, res) => { res.end() })
 
 /*
 * 404
