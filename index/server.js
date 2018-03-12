@@ -62,7 +62,6 @@ const mainRouter = {
   articleType: serve('../main/dist/articleType.html', true),
   insideArticleInfo: serve('../main/dist/insideArticleInfo.html', true),
   myBlogManager: serve('../main/dist/myBlogManager.html', true),
-  'z-uiExample': serve('../main/dist/z-uiExample/index.html', true),
   'baidu_verify_5zkiFIuBhO.html': serve('./baidu_verify_5zkiFIuBhO.html', true),
 }
 for (const key in mainRouter) {
