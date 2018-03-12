@@ -53,7 +53,6 @@ app.use('/service-worker.js', serve('./dist/service-worker.js'))
 // 内容spa静态化
 app.use('/main/', serve('../main/dist', true))
 app.use('/dist', serve('./dist', true))
-app.use('/z-uiExample', serve('../z-uiExample'), true)
 
 const mainRouter = {
   share: serve('../main/dist/share.html', true),
@@ -63,8 +62,8 @@ const mainRouter = {
   articleType: serve('../main/dist/articleType.html', true),
   insideArticleInfo: serve('../main/dist/insideArticleInfo.html', true),
   myBlogManager: serve('../main/dist/myBlogManager.html', true),
+  'z-uiExample': serve('../main/z-uiExample/index.html', true),
   'baidu_verify_5zkiFIuBhO.html': serve('./baidu_verify_5zkiFIuBhO.html', true),
-  'z-uiExample': serve('../z-uiExample/index.html', true)
 }
 for (const key in mainRouter) {
   app.use(`/main/${key}`, mainRouter[key])
@@ -77,7 +76,6 @@ app.get('/', (req, res) => ssrRender(req, res))
 app.get('/index*', (req, res) => ssrRender(req, res))
 app.get('/main/', (req, res) => { res.end() })
 app.get('/baidu_verify_5zkiFIuBhO.html', (req, res) => { res.end() })
-app.get('/z-uiExample', (req, res) => { res.end() })
 
 /*
 * 404
