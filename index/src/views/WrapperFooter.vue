@@ -6,7 +6,7 @@
         {{ count }}
       </div>
       <div class="footer-content font-over">
-        © 2016-2018 zouchenwd.cn 版权所有鄂ICP备17021615号-1
+        © 2016-2019 zouchenwd.cn 版权所有公安部备案号42011202001387
       </div>
       <div class="footer-share-list">
         <a v-for="(item, index) in shareList" :key="index" :href="item.href" target="_blank" :title="item.title">
